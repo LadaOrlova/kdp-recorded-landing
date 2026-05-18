@@ -3205,6 +3205,26 @@
             .author-fly-img { width: 380px; left: -60px; }
         }
 
+        /* ===== ACCESSIBILITY & TOUCH ===== */
+        .btn, a, summary, details {
+            touch-action: manipulation;
+        }
+        .btn:focus-visible,
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 2px solid var(--orange);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .ticker-inner { animation: none; }
+        }
+
         /* ===== V2 OVERRIDES: softer aesthetic ===== */
         :root {
             --shadow-card: 0 4px 24px rgba(14,14,14,0.08);
